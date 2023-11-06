@@ -42,9 +42,18 @@
 		position: relative;
 		width: 100%;
 		max-width: 640px;
-		min-width: calc(320px - 32px);
+		min-width: calc(320px - 40px);
 	}
 	h1 {
 		font-size: 56px;
+	}
+
+	@media (max-width: 700px) {
+		h1 {
+			font-size: 32px;
+		}
+		form {
+			padding: 0 20px 200px;
+		}
 	}
 </style>

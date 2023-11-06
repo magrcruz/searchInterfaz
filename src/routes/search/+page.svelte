@@ -164,4 +164,26 @@
 		gap: 32px;
 		max-width: 700px;
 	}
+
+	@media (max-width: 700px) {
+		main {
+			padding: 0 20px;
+		}
+		form {
+			flex-direction: column;
+			padding: 20px;
+			gap: 16px;
+		}
+		p {
+			width: 100%;
+		}
+		input, input:focus {
+			width: 100%;
+			margin: 0;
+			padding-left: calc(24px + 24px);
+		}
+		input+svg {
+			display: block;
+		}
+	}
 </style>
