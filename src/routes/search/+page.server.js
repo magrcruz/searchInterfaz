@@ -1,7 +1,7 @@
 import { supabase } from "$lib/client.js"
 
 export async function load({ url }) {
-    let query = url.searchParams.get("query")
+    let query = url.searchParams.get("query").toLowerCase()
 
 
     let { data, error } = await supabase

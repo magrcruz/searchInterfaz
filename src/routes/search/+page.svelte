@@ -7,64 +7,6 @@
 
 	$: query = $page.url.searchParams.get("query");
 	$: ({ time, pages } = data)
-	// $: (console.log(data.pages))
-
-	let results = [
-		{
-			url: "https://google.com",
-			title: "Google",
-			snippet:
-				"Search the world's information, including webpages, images, videos and more. Google has many special features to help you find exactly what you're looking...",
-		},
-		{
-			url: "https://wikipedia.com",
-			title: "Wikipedia",
-			snippet:
-				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
-		},
-		{
-			url: "https://wikipedia.com",
-			title: "Wikipedia",
-			snippet:
-				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
-		},
-		{
-			url: "https://wikipedia.com",
-			title: "Wikipedia",
-			snippet:
-				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
-		},
-		{
-			url: "https://wikipedia.com",
-			title: "Wikipedia",
-			snippet:
-				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
-		},
-		{
-			url: "https://wikipedia.com",
-			title: "Wikipedia",
-			snippet:
-				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
-		},
-		{
-			url: "https://wikipedia.com",
-			title: "Wikipedia",
-			snippet:
-				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
-		},
-		{
-			url: "https://wikipedia.com",
-			title: "Wikipedia",
-			snippet:
-				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
-		},
-		{
-			url: "https://wikipedia.com",
-			title: "Wikipedia",
-			snippet:
-				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
-		}
-	];
 </script>
 
 <svelte:head>
