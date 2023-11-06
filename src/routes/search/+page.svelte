@@ -1,0 +1,167 @@
+<script>
+	import { page } from "$app/stores";
+	import Card from "./Card.svelte";
+
+	export let data
+	let buscando = false
+
+	$: query = $page.url.searchParams.get("query");
+	$: ({ time } = data)
+
+	let results = [
+		{
+			url: "https://google.com",
+			title: "Google",
+			snippet:
+				"Search the world's information, including webpages, images, videos and more. Google has many special features to help you find exactly what you're looking...",
+		},
+		{
+			url: "https://wikipedia.com",
+			title: "Wikipedia",
+			snippet:
+				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
+		},
+		{
+			url: "https://wikipedia.com",
+			title: "Wikipedia",
+			snippet:
+				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
+		},
+		{
+			url: "https://wikipedia.com",
+			title: "Wikipedia",
+			snippet:
+				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
+		},
+		{
+			url: "https://wikipedia.com",
+			title: "Wikipedia",
+			snippet:
+				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
+		},
+		{
+			url: "https://wikipedia.com",
+			title: "Wikipedia",
+			snippet:
+				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
+		},
+		{
+			url: "https://wikipedia.com",
+			title: "Wikipedia",
+			snippet:
+				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
+		},
+		{
+			url: "https://wikipedia.com",
+			title: "Wikipedia",
+			snippet:
+				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
+		},
+		{
+			url: "https://wikipedia.com",
+			title: "Wikipedia",
+			snippet:
+				"Wikipedia · Es una enciclopedia, entendida como soporte que permite la recopilación, el almacenamiento y la transmisión de la información de forma estructurada.",
+		}
+	];
+</script>
+
+<svelte:head>
+	<title>{query} - Busqueda</title>
+</svelte:head>
+
+<header>
+	<form action="?/search" method="get">
+		<a href="/">
+			<h1>Súper Buscador</h1>
+		</a>
+		<p>
+			<input type="search" name="query" id="query" value={query} required/>
+			<svg
+				class="placeholder"
+				xmlns="http://www.w3.org/2000/svg"
+				height="24"
+				viewBox="0 -960 960 960"
+				width="24"
+				><path
+					fill="var(--fill)"
+					d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+				/></svg
+			>
+		</p>
+	</form>
+</header>
+<main>
+	{#if buscando}
+		<h2>Buscando...</h2>
+	{:else if results.length === 0}
+		<h2>Lo sentimos</h2>
+		<p>Tu búsqueda no arrojó ningún resultado :&lpar;</p>
+	{:else}
+		<small>Cerca de {results.length} resultados ({time} segundos)</small>
+		<h2>Resultados de la búsqueda:</h2>
+		<ul>
+			{#each results as result}
+				<Card {...result} />
+			{/each}
+		</ul>
+	{/if}
+</main>
+
+<style>
+	main {
+		padding: 0 32px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	small{
+		color: var(--text);
+	}
+	form > a {
+		color: var(--accent);
+		text-decoration: none;
+	}
+	form {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+		padding: 26px 32px;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	p {
+		position: relative;
+	}
+	input+svg {
+		display: none;
+	}
+	input {
+		background-color: var(--hover);
+		border: 1px solid var(--hover);
+		box-shadow: none;
+		width: 500px;
+		margin-left: 24px;
+		padding-left: 24px;
+	}
+	input:hover {
+		box-shadow: 0 0 4px #0000004d;
+	}
+	input:focus {
+		box-shadow: 0 0 4px #0000004d;
+		width: calc(500px + 24px);
+		margin-left: 0px;
+		padding-left: calc(24px + 24px);
+	}
+	input:focus+svg {
+		display: block;
+	}
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		max-width: 700px;
+	}
+</style>
