@@ -1,12 +1,11 @@
 <script>
-	export let url, title, snippet;
+	export let page_id
 </script>
 
 <li>
-	<a href={url}>
-		<h1>{title}</h1>
+	<a href="https://es.wikipedia.org/wiki/{page_id}">
+		<h1>{decodeURIComponent(page_id)}</h1>
 	</a>
-	<p>{snippet}</p>
 </li>
 
 <style>

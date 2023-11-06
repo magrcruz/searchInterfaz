@@ -6,7 +6,8 @@
 	let buscando = false
 
 	$: query = $page.url.searchParams.get("query");
-	$: ({ time } = data)
+	$: ({ time, pages } = data)
+	// $: (console.log(data.pages))
 
 	let results = [
 		{
@@ -94,14 +95,14 @@
 <main>
 	{#if buscando}
 		<h2>Buscando...</h2>
-	{:else if results.length === 0}
+	{:else if pages.length === 0}
 		<h2>Lo sentimos</h2>
 		<p>Tu búsqueda no arrojó ningún resultado :&lpar;</p>
 	{:else}
-		<small>Cerca de {results.length} resultados ({time} segundos)</small>
+		<small>Cerca de {pages.length} resultados ({time} segundos)</small>
 		<h2>Resultados de la búsqueda:</h2>
 		<ul>
-			{#each results as result}
+			{#each pages as result}
 				<Card {...result} />
 			{/each}
 		</ul>

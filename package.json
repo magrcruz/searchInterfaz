@@ -16,6 +16,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource-variable/inter": "^5.0.15"
+		"@fontsource-variable/inter": "^5.0.15",
+		"@supabase/supabase-js": "^2.38.4",
+		"aws-sdk": "^2.1488.0"
 	}
 }
