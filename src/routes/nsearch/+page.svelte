@@ -1,12 +1,13 @@
 <script>
 	import { page } from "$app/stores";
-	import Card from "./Card.svelte";
+	import Ncard from "./Ncard.svelte";
 
 	export let data
 	let buscando = false
 
 	$: query = $page.url.searchParams.get("query");
 	$: ({ time, pages } = data)
+
 </script>
 
 <svelte:head>
@@ -45,7 +46,7 @@
 		<h2>Resultados de la búsqueda:</h2>
 		<ul>
 			{#each pages as result}
-				<Card {...result} />
+				<Ncard {...result} />
 			{/each}
 		</ul>
 	{/if}

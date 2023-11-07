@@ -10,9 +10,9 @@ export async function load({ url }) {
     const startTime = performance.now();
 
     let { data, error } = await supabase
-        .rpc('search_pages', {
-            term_to_search: query
-        })
+    .rpc('new_search_pages', {
+        term_to_search: query
+    })
 
     // Detener el cronómetro
     const endTime = performance.now();
