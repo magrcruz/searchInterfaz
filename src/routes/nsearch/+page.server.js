@@ -2,9 +2,7 @@ import { supabase } from "$lib/client.js"
 
 export async function load({ url }) {
     let query = url.searchParams.get("query").toLowerCase().trim()
-        .normalize('NFD')
-        .replace(/([aeio])\u0301|(u)[\u0301\u0308]/gi, "$1$2")
-        .normalize();
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,"");
 
     // Iniciar el cronómetro
     const startTime = performance.now();
