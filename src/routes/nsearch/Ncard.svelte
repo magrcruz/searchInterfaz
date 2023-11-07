@@ -25,7 +25,7 @@
 	a:visited, a:visited>h1 {
 		color: #c48af9;
 	}
-	p {
+	p:first-letter {
 		text-transform: capitalize;
 	}
 </style>
