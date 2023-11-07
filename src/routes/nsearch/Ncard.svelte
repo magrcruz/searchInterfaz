@@ -4,9 +4,9 @@
 
 <li>
 	<a href="https://es.wikipedia.org/wiki/{page_id}">
-		<h1>{decodeURIComponent(page_id).replace(/_/g," ")}...</h1>
+		<h1>{decodeURIComponent(page_id).replace(/_/g," ")}</h1>
 	</a>
-	<p>{content}</p>
+	<p>{content}...</p>
 </li>
 
 <style>
